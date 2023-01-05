@@ -30,7 +30,7 @@
                 marginTop: '24px',
                 fontFamily: 'AlibabaPuHuiTi-2-95-ExtraBold',
               }">
-                Why Connect?  
+                Why Connect?
               </div>
               <div class="detailInfo" :style="{
                 width: '302px',
@@ -46,13 +46,20 @@
               </div>
             </div>
             <template #reference>
-              <button>
+              <button @click="connectWallet">
                 Connect Wallet
               </button>
             </template>
           </van-popover>
         </div>
       </header>
+
+      <van-dialog v-model:show="show" title="Connect Wallet" show-cancel-button>
+        <div class="wallet-list">
+          <van-button type="primary">Metamask</van-button>
+          <van-button type="primary">Trust Wallet</van-button>
+        </div>
+      </van-dialog>
 
       <router-view class="router-view" v-slot="{ Component }">
         <transition :name="transitionName">
@@ -90,6 +97,7 @@ export default {
       theme: "dark",
       whyConnect:
         "OH MY NFT is a blockchain-based and secure platform. Participation requires you to register your wallet and email. No private data is shared with us.",
+      show: false,
     });
 
     router.beforeEach((to, from) => {
@@ -112,6 +120,11 @@ export default {
     //   }
     // };
 
+    // 选择钱包弹窗
+    const connectWallet = () => {
+      state.show = true;
+    }
+
     const showWhyConnect = (value) => {
       state.showPopover = value;
     };
@@ -124,6 +137,7 @@ export default {
       ...toRefs(state),
       changeTab,
       showWhyConnect,
+      connectWallet
     };
   },
   components: { RouterView, Footer },
@@ -214,6 +228,14 @@ body {
         cursor: pointer;
       }
     }
+  }
+
+  .wallet-list {
+    margin-top: 72px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
 

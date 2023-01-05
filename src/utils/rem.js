@@ -31,3 +31,7 @@ setRem()
 window.onresize = function () {
   setRem()
 }
+
+
+
+// function (n, e) { var t = n.documentElement, i = "orientationchange" in window ? "orientationchange" : "resize", o = function () { let size = 1920; const isMobile = navigator.userAgent.match(/(phone|pod|iPhone|iPod|ios|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i); if (isMobile) { size = 750 }; var n = t.clientWidth; n && (t.style.fontSize = n / size * 100 + "px") }; n.addEventListener && (e.addEventListener(i, o, !1), o()) }(document, window);

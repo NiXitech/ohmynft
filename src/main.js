@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
-import { ActionBar, ActionBarIcon, ActionBarButton, Divider, Popup, Overlay, Loading, Dialog, ContactCard, Form, AddressEdit, AddressList, Field, CellGroup, Cell, SwipeCell, Icon, Stepper, Checkbox, CheckboxGroup, Button, Swipe, SwipeItem, PullRefresh, Tab, Tabs, SubmitBar, 
-  Progress, Card, Col, Row, Tabbar, TabbarItem, Grid, GridItem, ConfigProvider, Skeleton, Popover } from 'vant'
+import { ActionBar, ActionBarIcon, ActionBarButton, Divider, Popup, Overlay, Loading, ContactCard, Form, AddressEdit, AddressList, Field, CellGroup, Cell, SwipeCell, Icon, Stepper, Checkbox, CheckboxGroup, Button, Swipe, SwipeItem, PullRefresh, Tab, Tabs, SubmitBar, 
+  Dialog, Progress, Card, Col, Row, Tabbar, TabbarItem, Grid, GridItem, ConfigProvider, Skeleton, Popover } from 'vant'
 import App from './App.vue'
 import store from './store'
 import router from './router'
@@ -52,6 +52,7 @@ const VantPlugins = [
   Tabs, 
   SubmitBar, 
    
+  Dialog,
   Progress,
   Card, 
   Col, 

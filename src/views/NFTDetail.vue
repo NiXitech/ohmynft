@@ -6,12 +6,29 @@
       </div>
     </div>
     <div class="detail-content">
-      <van-row>
-        <van-col>
-          1234
+      <van-row gutter="40">
+        <van-col span="12">
+          <div class="card-img">
+            <img src="../assets/tmpImg/cardImg.png" />
+          </div>
         </van-col>
-        <van-col>
-          1234
+        <van-col span="12">
+          <div class="card-info">
+            <div class="info-top">
+              <div class="card-title">
+                {{ cardtitle }}
+              </div>
+              <div class="card-number">
+                <span v-for="item in [1, 2, 3]" :key="item">
+                  <img src="../assets/partImg/redeem.png" alt="">
+                  {{ item }}
+                </span>
+              </div>
+            </div>
+            <div class="info-bottom">
+
+            </div>
+          </div>
         </van-col>
       </van-row>
       <van-row>
@@ -34,7 +51,7 @@ export default {
   },
   setup() {
     const state = reactive({
-
+      cardtitle: 'Apple Watch Series 8 - Starlight Aluminum Case with Sport Loop',
     });
 
     onMounted(() => {
@@ -73,6 +90,37 @@ export default {
 
   .detail-content {
     margin: 72px 200px 0px 200px;
+
+    .card-img {
+      .wh(740px, 740px);
+      border-radius: 24px;
+      border: 1px solid #fff;
+
+      img {
+        .wh(100%, 100%);
+      }
+    }
+
+    .card-info {
+      .wh(740px, 740px);
+      border: 1px solid #fff;
+
+      .info-top {
+        width: 100%;
+
+        .card-title {
+          font-family: HarmonyOS_Sans_SC_Bold;
+          font-size: 24px;
+          font-weight: bold;
+          line-height: 24px;
+          letter-spacing: 0px;
+        }
+      }
+
+      .info-bottom {
+        width: 100%;
+      }
+    }
   }
 }
 </style>
