@@ -56,8 +56,8 @@
 
       <van-dialog v-model:show="show" title="Connect Wallet" show-cancel-button>
         <div class="wallet-list">
-          <van-button type="primary">Metamask</van-button>
-          <van-button type="primary">Trust Wallet</van-button>
+          <van-button type="primary" @click="connectMetamask">Metamask</van-button>
+          <van-button type="primary" @click="connectTrust">Trust Wallet</van-button>
         </div>
       </van-dialog>
 
@@ -125,6 +125,16 @@ export default {
       state.show = true;
     }
 
+    // 选择metamask 
+    const connectMetamask = ()=> {
+      console.log('')
+    }
+
+    // 选择trust wallet 
+    const connectTrust = ()=> {
+      console.log('')
+    }
+
     const showWhyConnect = (value) => {
       state.showPopover = value;
     };
@@ -137,7 +147,9 @@ export default {
       ...toRefs(state),
       changeTab,
       showWhyConnect,
-      connectWallet
+      connectWallet,
+      connectMetamask,
+      connectTrust,
     };
   },
   components: { RouterView, Footer },
